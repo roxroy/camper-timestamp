@@ -1,0 +1,27 @@
+{
+  "name": "camper-timestamp",
+  "version": "1.0.0",
+  "description": "Timestamp microservice",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roxroy/timestamp.git"
+  },
+  "keywords": [
+    "microservice",
+    "node"
+  ],
+  "author": "roxroy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/roxroy/camper-timestamp/issues"
+  },
+  "homepage": "https://github.com/roxroy/camper-timestamp#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "pug": "^2.0.0-beta11"
+  }
+}
