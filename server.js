@@ -19,6 +19,20 @@ function formattedDate(now){
         now.getFullYear();
 };
 
+function convertDate(asDate,asNumber){
+    var result = { unix : null,  natural : null }
+    
+    if (asNumber > 0) {
+         result.unix = asNumber;
+         result.natural = formattedDate(new Date(asNumber*1000));
+    } else  if (!isNaN(asDate)) {
+         result.natural = formattedDate(new Date(asDate));
+         result.unix = asDate/1000;
+    }
+     
+    return result;
+};
+
 app.get('/', function(req, res) {
     var now = new Date()
     var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
@@ -29,18 +43,11 @@ app.get('/', function(req, res) {
 
 app.get('/:timeString', function(req, res) {
      var dateString = req.params.timeString.trim();
+     
      var asDate = Date.parse(dateString);
      var asNumber = Number(+dateString);
      
-     var result = { unix : null,  natural : null }
-     
-     if (asNumber > 1) {
-         result.unix = asNumber;
-         result.natural = formattedDate(new Date(asNumber*1000));
-     } else  if (!isNaN(asDate)) {
-         result.natural = formattedDate(new Date(asDate));
-         result.unix = asDate/1000;
-     }
+     var result = convertDate(asDate,asNumber);
      
      res.json(result)
 })

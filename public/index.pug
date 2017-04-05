@@ -2,10 +2,11 @@ doctype html
 html(lang='en')
   head
     title MS service
-    link(href='/bootstrap.min.js', rel='stylesheet', type='text/css')
+    link(href='/bootstrap.min.css', rel='stylesheet', type='text/css')
+    link(href='/app.css', rel='stylesheet', type='text/css')
   body
-   div.container
-    h1 API Timestamp Microservice
+   div.container.backdrop
+    h1.text-center API Timestamp Microservice
     h3 User stories:
     ol
      li I can pass a string as a parameter, and it will check to see whether that string contains either a unix timestamp or a natural language date (example: May 1, 2017)
