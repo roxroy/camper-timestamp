@@ -14,9 +14,9 @@ var monthNames = ["January", "February", "March", "April", "May", "June",
         ];
 
 function formattedDate(now){
-    return monthNames[now.getMonth()] +' '+ 
-        now.getDate() +', ' +
-        now.getFullYear();
+    return monthNames[now.getUTCMonth()] +' '+ 
+        now.getUTCDate() +', ' +
+        now.getUTCFullYear();
 };
 
 function convertDate(asDate,asNumber){
